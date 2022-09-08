@@ -1,10 +1,4 @@
-import Document, {
-  DocumentContext,
-  Head,
-  Html,
-  Main,
-  NextScript,
-} from 'next/document';
+import Document, { DocumentContext, Head, Html, Main, NextScript } from 'next/document';
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -16,7 +10,7 @@ class MyDocument extends Document {
     return (
       <Html lang='ja'>
         <Head>
-        <meta name="todo-app" content="todo-app"/>
+          <meta name='todo-app' content='todo-app' />
         </Head>
         <body>
           <Main />
