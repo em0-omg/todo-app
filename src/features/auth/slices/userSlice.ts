@@ -1,11 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import type { User } from 'firebase/auth';
 
 import { RootState } from '@/store';
 
-type UserState = {
-  user: User | null;
-};
+import { User, UserState } from '../types';
 
 const initialState: UserState = {
   user: null,
