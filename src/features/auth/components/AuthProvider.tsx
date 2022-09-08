@@ -51,5 +51,5 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     };
   }, []);
 
-  return <div>{children}</div>;
+  return <main>{children}</main>;
 };

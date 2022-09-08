@@ -2,6 +2,17 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
+      colors: {
+        brand: {
+          pink: '#EE827D',
+          red: 'B24E4C',
+          lightpink: '#FFE4E0',
+          blue: '#FFE4E0',
+          black: '#2F4858',
+          brown: '#574240',
+          gray: '#574240',
+        },
+      },
       fontFamily: {
         primary: ['Zen Maru Gothic', 'sans-serif'],
       },
