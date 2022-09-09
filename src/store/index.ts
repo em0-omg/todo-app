@@ -2,9 +2,11 @@ import { combineReducers, configureStore, PreloadedState } from '@reduxjs/toolki
 import { TypedUseSelectorHook, useSelector as rawUseSelector } from 'react-redux';
 
 import userReducer from '@/features/auth/slices/userSlice';
+import pageReducer from '@/slices/pageSlice';
 
 const rootReducer = combineReducers({
   user: userReducer,
+  page: pageReducer,
 });
 
 export function setupStore(preloadedState?: PreloadedState<RootState>) {

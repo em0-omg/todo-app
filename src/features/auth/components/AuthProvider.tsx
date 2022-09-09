@@ -6,6 +6,8 @@ import { useDispatch } from 'react-redux';
 
 import { auth, db } from '@/lib/firebase';
 
+import { useSelector } from '@/store';
+
 import { setUser } from '@/features/auth/slices/userSlice';
 import { User } from '@/features/auth/types';
 
@@ -15,6 +17,7 @@ export type AuthProviderProps = {
 
 export const AuthProvider = ({ children }: AuthProviderProps) => {
   const router = useRouter();
+  const { isDrawerOpen } = useSelector((state) => state.page);
   const dispatch = useDispatch();
   const isAvailableForViewing =
     router.pathname === '/about' || router.pathname === '/login' || router.pathname === '/signup';
@@ -40,6 +43,9 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
           setDoc(ref, appUser).then(() => {
             dispatch(setUser(appUser));
           });
+        }
+        if (router.pathname === '/login') {
+          await router.push('/');
         }
       } else {
         dispatch(setUser(null));
